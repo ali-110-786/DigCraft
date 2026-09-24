@@ -11,3 +11,18 @@ ores = {
     "sapphire": 0
 }
 
+tool = 0
+
+coins = 0
+
+def addOre(ore):
+    global ores
+    ores[ore] += 1
+
+def updateTool(toolId):
+    global tool
+    tool = toolId
+
+def addCoins(count):
+    global coins
+    coins += count
