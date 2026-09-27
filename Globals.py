@@ -1,28 +1,13 @@
 
-ores = {
-    "mud": 0,
-    "stone": 0,
-    "copper": 0,
-    "iron": 0,
-    "gold": 0,
-    "diamond": 0,
-    "emerald": 0,
-    "ruby": 0,
-    "sapphire": 0
+oreLayers = {
+    -0: "home",
+    -1: "mud",
+    -2: "stone",
+    -3: "copper",
+    -4: "iron",
+    -5: "gold",
+    -6: "diamond",
+    -7: "emerald",
+    -8: "ruby",
+    -9: "sapphire"
 }
-
-tool = 0
-
-coins = 0
-
-def addOre(ore):
-    global ores
-    ores[ore] += 1
-
-def updateTool(toolId):
-    global tool
-    tool = toolId
-
-def addCoins(count):
-    global coins
-    coins += count
