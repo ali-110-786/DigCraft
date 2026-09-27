@@ -46,12 +46,25 @@ DIAMOND: 3 diamond + 4000 coins
 EMERALD: 3 emerald + 10000 coins
 RUBY: 3 ruby + 25000 coins
 SAPPHIRE: 3 sapphire + 60000 coins""")
-    print(Globals.ores["copper"])
-    choice=input("Tools, Workers, Managers or Drills ")
+    print("You have", Player.coins, "coins")
+    choice=input("Tools, Workers, Managers, Drills or Sell ")
     if choice== "Tools":
-        if coins<2:
-            print("You cannot buy anything")
-        elif coins<8:
-            print("Would you like to buy
-        
-shop()
+        if Player.tool == 9:
+            print("You already have the best pickaxe")
+        else:
+            ore = Globals.oreLayers[-(Player.tool + 1)]
+            cost = Globals.toolCosts[ore]
+            if Player.ores[ore] >= cost[0] and Player.coins >= cost[1]:
+                Player.ores[ore] -= cost[0]
+                Player.coins -= cost[1]
+                Player.tool += 1
+                print("""
+    _______
+   /_______\\
+      | |
+      | |
+      |_|
+      """)
+                print("You bought a", ore, "pickaxe!")
+            else:
+                print("You need", cost[0], "ore and" , cost[1],  "coins to buy a {ore} pickaxe")
