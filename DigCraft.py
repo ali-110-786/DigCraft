@@ -1,4 +1,4 @@
-import Globals
+import Globals, Player
 import time
 def shop():
     print("""SHOP:
