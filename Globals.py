@@ -11,6 +11,9 @@ oreLayers = {
     -8: "ruby",
     -9: "sapphire"
 }
+
+ores = ["mud", "stone", "copper", "iron", "gold", "diamond", "emerald", "ruby", "sapphire"]
+
 toolCosts = {
     "mud": [3, 2],
     "stone": [4, 8],
@@ -23,18 +26,6 @@ toolCosts = {
     "sapphire": [8, 4000]
 }
 
-managerCosts = {
-    "mud": [3, 15],
-    "stone": [3, 45],
-    "copper": [3, 120],
-    "iron": [3, 270],
-    "gold": [3, 600],
-    "diamond": [3, 1500],
-    "emerald": [3, 3600],
-    "ruby": [3, 9000],
-    "sapphire": [3, 22500]
-}
-
 workerCosts = {
     "mud": [3, 5],
     "stone": [3, 15],
@@ -45,18 +36,6 @@ workerCosts = {
     "emerald": [3, 1200],
     "ruby": [3, 3000],
     "sapphire": [3, 7500]
-}
-
-drillCosts = {
-    "mud": [3, 30],
-    "stone": [3, 90],
-    "copper": [3, 250],
-    "iron": [3, 600],
-    "gold": [3, 1500],
-    "diamond": [3, 4000],
-    "emerald": [3, 10000],
-    "ruby": [3, 25000],
-    "sapphire": [3, 60000]
 }
 
 sellPrices = {

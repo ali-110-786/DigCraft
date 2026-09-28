@@ -1,5 +1,5 @@
 
-import Globals, Player, Shop, random
+import Globals, Player, Shop, random, time
 
 
 def tutorial():
@@ -39,15 +39,20 @@ def tutorial():
         action = input().lower()
 
     Shop.shop() # Placeholder: buy mud pickaxe
-    Player.tool = 1
 
     game()
 
 
 def game():
+    for worker, count in workers:
+        timeElapsed = int(time.time() - Player.lastWorker)
+        cpw = Globals.ores.index(worker) + 1
+        Player.coins += timeElapsed * cpw
+        Player.updateTime()
+    
     if Player.layer == 0:
         action = ""
-        print("Enter 'd' to dig down or 's' to enter the shop.")
+        print("Enter 'd' to dig down, 's' to enter the shop or 'q' to quit the game.")
         while action != "d" and action != "s":
             action = input().lower()
 
@@ -73,6 +78,7 @@ def game():
             game()
         else:
             Shop.shop() # Placeholder
+            game()
 
 
 def mine():

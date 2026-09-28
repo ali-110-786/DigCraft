@@ -1,5 +1,5 @@
 
-import Globals
+import Globals, time
 
 layer = 0
 
@@ -61,4 +61,8 @@ workers = {
 }
 
 
-lastTime = time.time()
+lastWorker = time.time()
+
+def updateTime():
+    global lastWorker
+    lastWorker = time.time()
