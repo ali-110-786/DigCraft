@@ -48,6 +48,7 @@ RUBY: 3 ruby + 25000 coins
 SAPPHIRE: 3 sapphire + 60000 coins""")
     print("You have", Player.coins, "coins")
     choice=input("Tools, Workers, Managers, Drills or Sell ")
+    orechoice=input("Mud, Stone, Copper, Iron, Gold, Diamond, Emerald, Ruby, Sapphire")
     if choice== "Tools":
         if Player.tool == 9:
             print("You already have the best pickaxe")
@@ -67,4 +68,4 @@ SAPPHIRE: 3 sapphire + 60000 coins""")
       """)
                 print("You bought a", ore, "pickaxe!")
             else:
-                print("You need", cost[0], "ore and" , cost[1],  "coins to buy a {ore} pickaxe")
+                print("You need", cost[0], "ore and" , cost[1],  "coins to buy a", ore, "pickaxe")
