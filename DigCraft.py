@@ -47,7 +47,7 @@ EMERALD: 3 emerald + 10000 coins
 RUBY: 3 ruby + 25000 coins
 SAPPHIRE: 3 sapphire + 60000 coins""")
     print("You have", Player.coins, "coins")
-    choice=input("Tools, Workers, Managers, Drills or Sell ")
+    choice=input("Tools, Workers or Sell ")
     orechoice=input("Mud, Stone, Copper, Iron, Gold, Diamond, Emerald, Ruby, Sapphire")
     if choice== "Tools":
         if Player.tool == 9:
@@ -69,3 +69,25 @@ SAPPHIRE: 3 sapphire + 60000 coins""")
                 print("You bought a", ore, "pickaxe!")
             else:
                 print("You need", cost[0], "ore and" , cost[1],  "coins to buy a", ore, "pickaxe")
+    if choice== "Workers":
+        if Player.workers["mud"] == 
+        ore=input("Mud, Stone, Copper, Iron, Gold, Diamond, Emerald, Ruby, Sapphire")
+        nwork=int(input("How many"))
+        cost = Globals.workerCosts[ore] * nwork
+        if Player.ores[ore] >= cost[0] and Player.coins >= cost[1]:
+            Player.ores[ore] -= cost[0]
+            Player.coins -= cost[1]
+            Player.workers += 1
+            for i in range(nwork):
+                print("""
+    
+       O
+      /|\
+     / | \
+       |
+      / \
+     /   \
+      """)
+                print("You bought,",nwork, ore, "workers")
+                else:
+                print("You need", cost[0], "ore and" , cost[1],  "coins to buy a", ore, "worker")
