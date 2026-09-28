@@ -9,7 +9,7 @@ def updateLayer(newLayer):
     print(f"You are now on layer: {Globals.oreLayers[layer].upper()}")
 
 def digDown():
-    if -tool <= layer:
+    if -tool <= layer and layer > -9:
         updateLayer(layer - 1)
     else:
         print("You do not have the required tool to dig down.")
@@ -46,3 +46,19 @@ ores = {
 def addOre(ore):
     global ores
     ores[ore] += 1
+
+
+workers = {
+    "mud": 0,
+    "stone": 0,
+    "copper": 0,
+    "iron": 0,
+    "gold": 0,
+    "diamond": 0,
+    "emerald": 0,
+    "ruby": 0,
+    "sapphire": 0
+}
+
+
+lastTime = time.time()
