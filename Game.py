@@ -1,10 +1,10 @@
 
-import Globals, Player, Shop, random, time
+import Globals, Player, Shop, UI, random
 
 
 def tutorial():
     action = ""
-    print("Enter 'd' to dig down.")
+    UI.display("Enter 'd' to dig down.")
     while action != "d":
         action = input().lower()
 
@@ -18,37 +18,38 @@ def tutorial():
         while action != "m":
             action = input().lower()
 
-        mine()
+        output = mine()
 
         mud = Player.ores["mud"]
         coins = Player.coins
         if mud >= 3:
             if coins >= 2:
-                print("You have enough mud and coins to buy a mud pickaxe.")
+                UI.display(output, "You have enough mud and coins to buy a mud pickaxe.")
             else:
-                print(f"Earn {2 - coins} more coins to buy a mud pickaxe.")
+                UI.display(output, f"Earn {2 - coins} more coins to buy a mud pickaxe.")
         else:
             if coins >= 2:
-                print(f"Mine {3 - mud} more mud to buy a mud pickaxe.")
+                UI.display(output, f"Mine {3 - mud} more mud to buy a mud pickaxe.")
             else:
-                print(f"Mine {3 - mud} more mud and {2 - coins} more coins to buy a mud pickaxe.")
+                UI.display(output, f"Mine {3 - mud} more mud and {2 - coins} more coins to buy a mud pickaxe.")
 
     action = ""
     print("Enter 's' to enter the shop.")
     while action != "s":
         action = input().lower()
 
-    Shop.shop() # Placeholder: buy mud pickaxe
+    UI.display()
+    outputs = Shop.tutorial()
+
+    outputs += ("Congratulations! You completed the tutorial.",)
+
+    UI.display(*outputs)
 
     game()
 
 
 def game():
-    for worker, count in workers:
-        timeElapsed = int(time.time() - Player.lastWorker)
-        cpw = Globals.ores.index(worker) + 1
-        Player.coins += timeElapsed * cpw
-        Player.updateTime()
+    Player.updateWorkers()
     
     if Player.layer == 0:
         action = ""
@@ -59,11 +60,18 @@ def game():
         if action == "d":
             Player.digDown()
             game()
+        elif action == "s":
+            Player.updateWorkers()
+            UI.display()
+            Shop.shop()
+            game()
+        elif action == "q":
+            return
         else:
-            Shop.shop() # Placeholder
+            game()
     else:
         action = ""
-        print("Enter 'd' to dig down, 'u' to go up, 'm' to mine or 's' to enter the shop.")
+        print("Enter 'd' to dig down, 'u' to go up, 'm' to mine, 's' to enter the shop or 'q' to quit the game.")
         while action != "d" and action != "u" and action != "m" and action != "s":
             action = input().lower()
 
@@ -76,21 +84,29 @@ def game():
         elif action == "m":
             mine()
             game()
+        elif action == "s":
+            Player.updateWorkers()
+            UI.display()
+            Shop.shop()
+            game()
+        elif action == "q":
+            return
         else:
-            Shop.shop() # Placeholder
             game()
 
 
 def mine():
     if Player.layer < 0:
         ore = Globals.oreLayers[Player.layer]
-        oreMined = True if random.randint(0, 100) < (23 + 2 * Player.layer) else False
+        oreMined = True if random.randint(0, 100) < (60 + 2 * Player.layer) else False
         if oreMined:
-            Player.addOre(ore)
-            print(f"You mined 1 {ore}!")
+            Player.ores[ore] += 1
+            UI.display(f"You mined 1 {ore}!")
+            return f"You mined 1 {ore}!"
         else:
             Player.addCoins(1)
-            print("You earned 1 coin.")
+            UI.display("You earned 1 coin.")
+            return "You earned 1 coin."
 
 
 if __name__ == "__main__":

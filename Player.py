@@ -1,24 +1,24 @@
 
-import Globals, time
+import Globals, UI, time
 
 layer = 0
 
 def updateLayer(newLayer):
     global layer
     layer = newLayer
-    print(f"You are now on layer: {Globals.oreLayers[layer].upper()}")
+    UI.display(f"You are now on layer: {Globals.oreLayers[layer].capitalize()}")
 
 def digDown():
     if -tool <= layer and layer > -9:
         updateLayer(layer - 1)
     else:
-        print("You do not have the required tool to dig down.")
+        UI.display("You do not have the required tool to dig down.")
 
 def moveUp():
     if layer < 0:
         updateLayer(layer + 1)
     else:
-        print("Unable to go any higher.")
+        UI.display("Unable to go any higher.")
 
 
 coins = 0
@@ -43,10 +43,6 @@ ores = {
     "sapphire": 0
 }
 
-def addOre(ore):
-    global ores
-    ores[ore] += 1
-
 
 workers = {
     "mud": 0,
@@ -60,9 +56,20 @@ workers = {
     "sapphire": 0
 }
 
-
 lastWorker = time.time()
 
 def updateTime():
     global lastWorker
     lastWorker = time.time()
+
+def updateWorkers():
+    global coins, ores, lastWorker
+    timeElapsed = int(time.time() - lastWorker)
+    
+    for worker, count in workers.items():
+        value = Globals.ores.index(worker) + 1
+        otc = (23 - 2 * value) / 100
+        coins += round(timeElapsed * value * count * (1 / otc))
+        ores[worker] += round(timeElapsed * count * otc)
+        
+    updateTime()
