@@ -6,19 +6,20 @@ layer = 0
 def updateLayer(newLayer):
     global layer
     layer = newLayer
-    UI.display(f"You are now on layer: {Globals.oreLayers[layer].capitalize()}")
+    layerName = Globals.oreLayers[layer]
+    UI.display(UI.HEADER + f"You are now on layer: {UI.END}{UI.oreColours[layerName]}{layerName.capitalize()}{UI.END}")
 
 def digDown():
-    if -tool <= layer and layer > -9:
-        updateLayer(layer - 1)
+    if -tool <= layer:
+        if layer > -9:
+            updateLayer(layer - 1)
+        else:
+            UI.display(UI.RED + "You are on the lowest layer." + UI.END)
     else:
-        UI.display("You do not have the required tool to dig down.")
+        UI.display(UI.RED + "You do not have the required tool to dig down." + UI.END)
 
 def moveUp():
-    if layer < 0:
-        updateLayer(layer + 1)
-    else:
-        UI.display("Unable to go any higher.")
+    updateLayer(layer + 1)
 
 
 coins = 0
