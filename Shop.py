@@ -4,15 +4,15 @@ import Globals, Player, Game, UI
 
 def shopInfo():
     print(f"""{"":<12}{UI.BOLD}{"TOOLS:":<28}{"WORKERS:":<28}{"COINS:":<12}{UI.END}
-{UI.BOLD}{UI.MUD}{"MUD:":<12}{UI.END}{UI.MUD}{"3 mud + 2 coins":<28}{"3 mud + 5 coins":<28}{"1 coin":<12}{UI.END}
-{UI.BOLD}{UI.STONE}{"STONE:":<12}{UI.END}{UI.STONE}{"4 stone + 8 coins":<28}{"3 stone + 15 coins":<28}{"3 coins":<12}{UI.END}
-{UI.BOLD}{UI.COPPER}{"COPPER:":<12}{UI.END}{UI.COPPER}{"4 copper + 20 coins":<28}{"3 copper + 40 coins":<28}{"8 coins":<12}{UI.END}
-{UI.BOLD}{UI.IRON}{"IRON:":<12}{UI.END}{UI.IRON}{"5 iron + 45 coins":<28}{"3 iron + 90 coins":<28}{"18 coins":<12}{UI.END}
-{UI.BOLD}{UI.GOLD}{"GOLD:":<12}{UI.END}{UI.GOLD}{"5 gold + 100 coins":<28}{"3 gold + 200 coins":<28}{"40 coins":<12}{UI.END}
-{UI.BOLD}{UI.DIAMOND}{"DIAMOND:":<12}{UI.END}{UI.DIAMOND}{"6 diamond + 250 coins":<28}{"3 diamond + 500 coins":<28}{"90 coins":<12}{UI.END}
-{UI.BOLD}{UI.EMERALD}{"EMERALD:":<12}{UI.END}{UI.EMERALD}{"6 emerald + 600 coins":<28}{"3 emerald + 1200 coins":<28}{"180 coins":<12}{UI.END}
-{UI.BOLD}{UI.RUBY}{"RUBY:":<12}{UI.END}{UI.RUBY}{"7 ruby + 1500 coins":<28}{"3 ruby + 3000 coins":<28}{"350 coins":<12}{UI.END}
-{UI.BOLD}{UI.SAPPHIRE}{"SAPPHIRE:":<12}{UI.END}{UI.SAPPHIRE}{"8 sapphire + 4000 coins":<28}{"3 sapphire + 7500 coins":<28}{"700 coins":<12}{UI.END}
+{UI.BOLD}{UI.MUDTEXT}{"MUD:":<12}{UI.END}{UI.MUDTEXT}{"3 mud + 2 coins":<28}{"3 mud + 5 coins":<28}{"1 coin":<12}{UI.END}
+{UI.BOLD}{UI.STONETEXT}{"STONE:":<12}{UI.END}{UI.STONETEXT}{"4 stone + 8 coins":<28}{"3 stone + 15 coins":<28}{"3 coins":<12}{UI.END}
+{UI.BOLD}{UI.COPPERTEXT}{"COPPER:":<12}{UI.END}{UI.COPPERTEXT}{"4 copper + 20 coins":<28}{"3 copper + 40 coins":<28}{"8 coins":<12}{UI.END}
+{UI.BOLD}{UI.IRONTEXT}{"IRON:":<12}{UI.END}{UI.IRONTEXT}{"5 iron + 45 coins":<28}{"3 iron + 90 coins":<28}{"18 coins":<12}{UI.END}
+{UI.BOLD}{UI.GOLDTEXT}{"GOLD:":<12}{UI.END}{UI.GOLDTEXT}{"5 gold + 100 coins":<28}{"3 gold + 200 coins":<28}{"40 coins":<12}{UI.END}
+{UI.BOLD}{UI.DIAMONDTEXT}{"DIAMOND:":<12}{UI.END}{UI.DIAMONDTEXT}{"6 diamond + 250 coins":<28}{"3 diamond + 500 coins":<28}{"90 coins":<12}{UI.END}
+{UI.BOLD}{UI.EMERALDTEXT}{"EMERALD:":<12}{UI.END}{UI.EMERALDTEXT}{"6 emerald + 600 coins":<28}{"3 emerald + 1200 coins":<28}{"180 coins":<12}{UI.END}
+{UI.BOLD}{UI.RUBYTEXT}{"RUBY:":<12}{UI.END}{UI.RUBYTEXT}{"7 ruby + 1500 coins":<28}{"3 ruby + 3000 coins":<28}{"350 coins":<12}{UI.END}
+{UI.BOLD}{UI.SAPPHIRETEXT}{"SAPPHIRE:":<12}{UI.END}{UI.SAPPHIRETEXT}{"8 sapphire + 4000 coins":<28}{"3 sapphire + 7500 coins":<28}{"700 coins":<12}{UI.END}
     """)
 
 

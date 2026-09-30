@@ -16,15 +16,15 @@ def inventory():
 {BOLD}{YELLOW}{"COINS:":<12}{END}{YELLOW}{Player.coins}{END}
 
 {"":<12}{BOLD}{"ORE:":<12}{"WORKERS:":<12}{END}
-{BOLD}{MUD}{"MUD:":<12}{END}{MUD}{Player.ores["mud"]:<12}{Player.workers["mud"]:<12}{END}
-{BOLD}{STONE}{"STONE:":<12}{END}{STONE}{Player.ores["stone"]:<12}{Player.workers["stone"]:<12}{END}
-{BOLD}{COPPER}{"COPPER:":<12}{END}{COPPER}{Player.ores["copper"]:<12}{Player.workers["copper"]:<12}{END}
-{BOLD}{IRON}{"IRON:":<12}{END}{IRON}{Player.ores["iron"]:<12}{Player.workers["iron"]:<12}{END}
-{BOLD}{GOLD}{"GOLD:":<12}{END}{GOLD}{Player.ores["gold"]:<12}{Player.workers["gold"]:<12}{END}
-{BOLD}{DIAMOND}{"DIAMOND:":<12}{END}{DIAMOND}{Player.ores["diamond"]:<12}{Player.workers["diamond"]:<12}{END}
-{BOLD}{EMERALD}{"EMERALD:":<12}{END}{EMERALD}{Player.ores["emerald"]:<12}{Player.workers["emerald"]:<12}{END}
-{BOLD}{RUBY}{"RUBY:":<12}{END}{RUBY}{Player.ores["ruby"]:<12}{Player.workers["ruby"]:<12}{END}
-{BOLD}{SAPPHIRE}{"SAPPHIRE:":<12}{END}{SAPPHIRE}{Player.ores["sapphire"]:<12}{Player.workers["sapphire"]:<12}{END}
+{BOLD}{MUDTEXT}{"MUD:":<12}{END}{MUDTEXT}{Player.ores["mud"]:<12}{Player.workers["mud"]:<12}{END}
+{BOLD}{STONETEXT}{"STONE:":<12}{END}{STONETEXT}{Player.ores["stone"]:<12}{Player.workers["stone"]:<12}{END}
+{BOLD}{COPPERTEXT}{"COPPER:":<12}{END}{COPPERTEXT}{Player.ores["copper"]:<12}{Player.workers["copper"]:<12}{END}
+{BOLD}{IRONTEXT}{"IRON:":<12}{END}{IRONTEXT}{Player.ores["iron"]:<12}{Player.workers["iron"]:<12}{END}
+{BOLD}{GOLDTEXT}{"GOLD:":<12}{END}{GOLDTEXT}{Player.ores["gold"]:<12}{Player.workers["gold"]:<12}{END}
+{BOLD}{DIAMONDTEXT}{"DIAMOND:":<12}{END}{DIAMONDTEXT}{Player.ores["diamond"]:<12}{Player.workers["diamond"]:<12}{END}
+{BOLD}{EMERALDTEXT}{"EMERALD:":<12}{END}{EMERALDTEXT}{Player.ores["emerald"]:<12}{Player.workers["emerald"]:<12}{END}
+{BOLD}{RUBYTEXT}{"RUBY:":<12}{END}{RUBYTEXT}{Player.ores["ruby"]:<12}{Player.workers["ruby"]:<12}{END}
+{BOLD}{SAPPHIRETEXT}{"SAPPHIRE:":<12}{END}{SAPPHIRETEXT}{Player.ores["sapphire"]:<12}{Player.workers["sapphire"]:<12}{END}
     """)
 
 
@@ -45,16 +45,6 @@ BOLD = '\033[1m'
 GREEN = '\033[92m'
 YELLOW = '\033[93m'
 RED = '\033[91m'
-
-MUD = '\033[48;5;94m'
-STONE = '\033[48;5;245m'
-COPPER = '\033[48;5;208m'
-IRON = '\033[48;5;251m'
-GOLD = '\033[48;5;220m'
-DIAMOND = '\033[48;5;51m'
-EMERALD = '\033[48;5;46m'
-RUBY = '\033[48;5;160m'
-SAPPHIRE = '\033[48;5;33m'
 
 MUDTEXT = '\033[38;5;94m'
 STONETEXT = '\033[38;5;245m'
