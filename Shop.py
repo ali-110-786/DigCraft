@@ -46,7 +46,7 @@ def shop():
         UI.display()
 
         if Player.tool == 9:
-            print(UI.BOLD + "You already have the best pickaxe." + UI.END)
+            outputs += (UI.RED + "You already have the best pickaxe." + UI.END,)
         else:
             ore = Globals.oreLayers[-(Player.tool + 1)]
             cost = Globals.toolCosts[ore]
